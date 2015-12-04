@@ -4,8 +4,6 @@ package collections;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
-import org.hamcrest.core.Is;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -28,7 +26,7 @@ public class MapsExamples {
     public void indexando() throws Exception {
         List<Livro> livros = ImmutableList.of(new Livro("10"), new Livro("20"));
 
-        Map<String,Livro> livroMap = Maps.uniqueIndex(livros.iterator(), new Function<Livro, String>(){
+        Map<String, Livro> livroMap = Maps.uniqueIndex(livros.iterator(), new Function<Livro, String>() {
                     public String apply( Livro input) {
                         return input.getIsbn();
                     }
